@@ -1,4 +1,4 @@
-# Skin Cancer Classification Using CNNs
+# Skin Cancer Classification Using Convolutional Neural Networks
 
 Multi-class classification of 9 skin lesion types using deep learning with transfer learning and class imbalance handling.
 
