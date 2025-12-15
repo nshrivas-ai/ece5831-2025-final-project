@@ -2,14 +2,14 @@
 
 Multi-class classification of 9 skin lesion types using deep learning with transfer learning and class imbalance handling.
 
+## Project Report (IEEE Format)
+https://drive.google.com/drive/folders/1urnD3jDn6AQgb09W9nBl1X-OE2pBn3nD
+
 ## Pre-recorded Presentation Video
 https://www.youtube.com/watch?v=BNObPrvPU5k
 
 ## Presentation Slides
 https://drive.google.com/drive/folders/1po_sQSeaiDr7B2NjP0lSXOFzpw-hsJGu
-
-## Project Report (IEEE Format)
-https://drive.google.com/drive/folders/1urnD3jDn6AQgb09W9nBl1X-OE2pBn3nD
 
 ## Dataset Link
 https://drive.google.com/drive/folders/1kPRBt3u1aDLjx0Yh3LWFpWUbdJGkAp-K
