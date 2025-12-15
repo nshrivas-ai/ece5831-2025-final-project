@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ## Usage
 
 ### Training
-Open and run `final-project.ipynb` in Jupyter:
+Open and run `skin_cancer_notebook_updated_6.ipynb` in Jupyter:
 - Execute cells sequentially
 - Models save automatically during training
 - Best models saved as `best_*.keras` files
@@ -55,28 +55,38 @@ Open and run `final-project.ipynb` in Jupyter:
 
 Run this cell
 ```
-# Load saved model
-model = keras.models.load_model('best_densenet201.keras')
+from predict_skin_lesion import predict_image, load_model
 
-# Use the predict_image() function
-img_path = "Data/Skin_cancer_ISIC_data/Test/nevus/ISIC_0000007.jpg"
+# Load model once
+model = load_model('best_densenet_neeraj_shrivastava.keras')
 
-pil = Image.open(img_path)
-top_idx, top_probs = predict_image(pil, top_k=5)
+# Predict single image
+#top_idx: Array of class indices for the top-K predictions (e.g., [3, 4, 1] for top 3 classes)
+#top_probs: Array f probability scores for those predictions (e.g., [0.85, 0.10, 0.03])
+
+img_path = "Data/Skin_cancer_ISIC_data/Test/nevus/ISIC_0000008.jpg"
+top_idx, top_probs = predict_image(img_path, model, top_k=3)
+
+# Get predicted class name
+from predict_skin_lesion import CLASS_NAMES
+predicted_class = CLASS_NAMES[top_idx[0]]
+confidence = top_probs[0] * 100
+print(f"Prediction: {predicted_class} ({confidence:.2f}%)")
+
 ```
 
 
 **What it does:**
 - Displays the input image
 - Shows top-K predicted classes with confidence scores
-- Automatically preprocesses image (resizes to 75×100, applies model-specific preprocessing)
+
 
 ## Saved Models
 
 | Model | Filename | Test Accuracy |
 |-------|----------|---------------|
 | Baseline CNN | `best_simple_cnn.keras` | ~35% |
-| DenseNet201 | `best_densenet201.keras` | 44.92% |
+| DenseNet201 | `best_densenet_neeraj_shrivastava.keras` | 44.92% |
 | InceptionV3 | `best_inceptionv3.keras` | ~43% |
 | MobileNetV2 | `best_mobilenetv2.keras` | ~42% |
 | Binary SMOTE | `best_densenet_binary_smote.keras` | Binary melanoma detection |
@@ -98,12 +108,11 @@ Project/
 │   └── Skin_cancer_ISIC_data/
 │       ├── Train/                          # Training images (9 class folders)
 │       └── Test/                           # Test images (9 class folders)
-├── best_*.keras                            # Saved models
-├── requirements.txt                        # Dependencies
-└── Project_Update_*.pdf                    # Final report
+├── best_densenet_neeraj_shrivastava.keras  # Saved models
+├── predict_skin_lesion.py                  # Standalong python file for predicting skin cancer types
+└── final-project.ipynb                     # Notebook file
 ```
 
 ## Project Report
 
 See `Project_Update_Skin Cancer Classification Using Convolutional Neural Networks.pdf` for complete methodology and results.
-
