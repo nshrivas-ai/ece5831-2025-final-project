@@ -111,7 +111,7 @@ Project/
 │       ├── Train/                          # Training images (9 class folders)
 │       └── Test/                           # Test images (9 class folders)
 ├── best_densenet_neeraj_shrivastava.keras  # Saved models
-├── predict_skin_lesion.py                  # Standalong python file for predicting skin cancer types
+├── predict_skin_lesion.py                  # Stand alone python file for predicting skin cancer types
 └── final-project.ipynb                     # Notebook file
 ```
 
