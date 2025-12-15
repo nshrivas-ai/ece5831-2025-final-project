@@ -46,7 +46,7 @@ pip install -r requirements.txt
 ## Usage
 
 ### Training
-Open and run `skin_cancer_notebook_updated_6.ipynb` in Jupyter:
+Open and run `final-project.ipynb` in Jupyter:
 - Execute cells sequentially
 - Models save automatically during training
 - Best models saved as `best_*.keras` files
