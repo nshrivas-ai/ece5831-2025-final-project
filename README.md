@@ -115,6 +115,4 @@ Project/
 └── final-project.ipynb                     # Notebook file
 ```
 
-## Project Report
 
-See `Project_Update_Skin Cancer Classification Using Convolutional Neural Networks.pdf` for complete methodology and results.
